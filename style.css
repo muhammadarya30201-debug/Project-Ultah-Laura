@@ -1,0 +1,295 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    /* Background gelap mewah dengan gradasi pink-ungu neon ala terowongan cinta */
+    background: radial-gradient(circle, #2a0845 0%, #12021c 60%, #000000 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animasi Background Bergeser */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Terowongan Neon Love Natural Berbasis SVG Vektor */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    /* Bentuk hati vektor halus tanpa emoji */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff69b4' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+    filter: drop-shadow(0 0 20px #ff1493) drop-shadow(0 0 40px #ff69b4);
+    animation: tunnelZoom 4s ease-in-out infinite;
+}
+
+@keyframes tunnelZoom {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0.05; filter: drop-shadow(0 0 10px #ff1493); }
+    50% { transform: translate(-50%, -50%) scale(1.8); opacity: 0.3; filter: drop-shadow(0 0 50px #ff69b4) drop-shadow(0 0 80px #da70d6); }
+    100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; filter: drop-shadow(0 0 10px #ff1493); }
+}
+
+/* Header & Glass Effect */
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #fce4ec;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    margin: 1.5rem 0 2.5rem 0;
+    width: 100%;
+    max-width: 950px;
+    box-shadow: 0 10px 40px rgba(255, 20, 147, 0.15);
+    text-align: center;
+}
+
+/* Media Box & Layout Sejajar */
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch; /* Membuat kedua box kiri & kanan tingginya setara */
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 950px;
+}
+
+.media-box {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    border-radius: 25px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.media-box h3 { color: #ff69b4; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(255, 105, 180, 0.5); }
+
+audio, video {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Kotak Kiri Menyesuaikan Tinggi Secara Proporsional & Rapat dari Atas */
+.media-box.left-letter-box {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px; /* Jarak antar elemen konsisten dari atas ke bawah */
+}
+
+/* Teks Mengetik Mengalir Memenuhi Ruang ke Bawah Tanpa Terpotong di Atas */
+.love-letter-flow {
+    margin-top: 5px;
+    background: transparent;
+    border: none;
+    padding: 5px 8px;
+    text-align: left;
+    flex-grow: 1; /* Memanjang otomatis mengisi ruang sisa ke bawah */
+    max-height: none; /* Menghilangkan batasan kaku agar tidak kepotong */
+    overflow: visible; /* Membiarkan teks mengalir rapi */
+}
+
+.love-letter-flow h4 {
+    color: #ff69b4;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+}
+
+.love-letter-flow p {
+    color: #fce4ec;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Efek Kursor Mengetik */
+#typewriter-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Mempercantik Scrollbar teks */
+.love-letter-flow::-webkit-scrollbar {
+    width: 5px;
+}
+.love-letter-flow::-webkit-scrollbar-thumb {
+    background: rgba(255, 105, 180, 0.4);
+    border-radius: 10px;
+}
+
+/* Tab Buttons (Dibuat lebar penuh biar sejajar sebaris) */
+.tab-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px; 
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 105, 180, 0.5);
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Teks nggak akan patah */
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: #ff1493;
+    color: #fff;
+    border-color: #ff69b4;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+}
+
+/* Konten Bab */
+.chapter-content { 
+    display: none; 
+    width: 100%;
+    max-width: 1000px;
+}
+.chapter-content.active { display: block; animation: fadeIn 0.6s ease-in; }
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: scale(0.97); } 
+    to { opacity: 1; transform: scale(1); } 
+}
+
+/* Grid Layout Flexbox (Rata, Sejajar, Tidak Ada Foto Terbuang) */
+.grid-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 12px 18px 12px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.2);
+    width: 290px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.grid-item:hover { 
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.grid-item img:hover {
+    filter: brightness(1.05);
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: #444;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Styling Kotak Lirik Berjalan */
+.lyrics-box {
+    margin-top: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    border-radius: 12px;
+    padding: 10px 15px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.lyrics-text {
+    font-size: 0.9rem;
+    color: #ff8fab;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
+    transition: all 0.4s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
