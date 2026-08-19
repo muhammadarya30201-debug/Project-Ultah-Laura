@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Data Lirik Lagu (Olivia Rodrigo - honeybee)
     const lyricsData = [
-        { time: 31, text: "🐝 (Intro / Musik mulai)..." },
-        { time: 35, text: "You're buzzing 'round my mind..." },
-        { time: 42, text: "Like a sweet little honeybee 🍯" },
-        { time: 50, text: "Happy 20th Birthday, Bunga Laura Gustina Putri! 💖" },
-        { time: 58, text: "Every moment with you is so special ✨" },
-        { time: 66, text: "You're my forever favorite person 🤍" },
-        { time: 75, text: "I love you to the moon and back 🌙" },
-        { time: 90, text: "Forever with you, my bini 🤭💕" }
+        { time: 31, text: "HALOOO SAYANGGGKUUUU ! " },
+        { time: 35, text: "u are buzzing 'round my mind..." },
+        { time: 42, text: "like a sweet little honeybee 🍯" },
+        { time: 50, text: "happy 20th birthday, Bunga Laura Gustina Putri ! 💖" },
+        { time: 58, text: "every moment with u is so special ✨" },
+        { time: 66, text: "u are my forever favorite person 🤍" },
+        { time: 75, text: "i love u to the moon babe 🌙" },
+        { time: 90, text: "i hope we can grow old together yaa bubiess 🤭💕" }
     ];
 
     let isTypingStarted = false;
